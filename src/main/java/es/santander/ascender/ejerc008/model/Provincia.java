@@ -1,11 +1,18 @@
-package es.santander.ascender.ejerc007.model;
+package es.santander.ascender.ejerc008.model;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.hibernate.validator.constraints.Length;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.Min;
 
 @Entity
@@ -23,6 +30,10 @@ public class Provincia {
 
     @Min(0)
     private int poblacion;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "provincia", cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE })
+    private List<Persona> persona = new ArrayList<>();
 
     public Provincia() {
     }
@@ -64,6 +75,14 @@ public class Provincia {
 
     public void setPoblacion(int poblacion) {
         this.poblacion = poblacion;
+    }
+
+    public List<Persona> getPersona() {
+        return persona;
+    }
+
+    public void setPersona(List<Persona> persona) {
+        this.persona = persona;
     }
 
     @Override

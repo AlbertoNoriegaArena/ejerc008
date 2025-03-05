@@ -1,4 +1,4 @@
-package es.santander.ascender.ejerc007.service;
+package es.santander.ascender.ejerc008.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,10 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import es.santander.ascender.ejerc007.model.Documento;
-import es.santander.ascender.ejerc007.model.Expediente;
-import es.santander.ascender.ejerc007.repository.DocumentoRepository;
-import es.santander.ascender.ejerc007.repository.ExpedienteRepository;
+import es.santander.ascender.ejerc008.model.Documento;
+import es.santander.ascender.ejerc008.model.Expediente;
+import es.santander.ascender.ejerc008.repository.DocumentoRepository;
+import es.santander.ascender.ejerc008.repository.ExpedienteRepository;
 
 @Service
 @Transactional

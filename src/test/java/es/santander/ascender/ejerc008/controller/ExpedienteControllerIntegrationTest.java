@@ -1,4 +1,4 @@
-package es.santander.ascender.ejerc007.controller;
+package es.santander.ascender.ejerc008.controller;
 
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
@@ -23,10 +23,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import es.santander.ascender.ejerc007.model.Documento;
-import es.santander.ascender.ejerc007.model.Expediente;
-import es.santander.ascender.ejerc007.repository.DocumentoRepository;
-import es.santander.ascender.ejerc007.repository.ExpedienteRepository;
+import es.santander.ascender.ejerc008.model.Documento;
+import es.santander.ascender.ejerc008.model.Expediente;
+import es.santander.ascender.ejerc008.repository.DocumentoRepository;
+import es.santander.ascender.ejerc008.repository.ExpedienteRepository;
 
 @SpringBootTest
 @AutoConfigureMockMvc

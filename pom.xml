@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>es.santander.ascender</groupId>
-	<artifactId>ejerc007</artifactId>
+	<artifactId>ejerc008</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ejerc007</name>
+	<name>ejerc008</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>

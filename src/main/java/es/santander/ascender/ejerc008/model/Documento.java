@@ -1,4 +1,4 @@
-package es.santander.ascender.ejerc007.model;
+package es.santander.ascender.ejerc008.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

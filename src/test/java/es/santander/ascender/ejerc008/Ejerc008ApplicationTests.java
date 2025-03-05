@@ -1,4 +1,4 @@
-package es.santander.ascender.ejerc007;
+package es.santander.ascender.ejerc008;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -8,11 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
-import es.santander.ascender.ejerc007.model.Expediente;
-import es.santander.ascender.ejerc007.repository.ExpedienteRepository;
+import es.santander.ascender.ejerc008.model.Expediente;
+import es.santander.ascender.ejerc008.repository.ExpedienteRepository;
 
 @SpringBootTest
-class Ejerc007ApplicationTests {
+class Ejerc008ApplicationTests {
 
 	@Autowired
 	private ExpedienteRepository expedienteRepository;
