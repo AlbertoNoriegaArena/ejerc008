@@ -62,7 +62,7 @@ public class PersonaController {
 
     // Update
     @PutMapping("/{id}")
-    public ResponseEntity<Persona> updatePersona(@Valid @PathVariable Long id, @RequestBody Persona personaDetails) {
+    public ResponseEntity<Persona> updatePersona(@PathVariable Long id, @Valid @RequestBody Persona personaDetails) {
         Persona updatedPersona = personaService.updatePersona(id, personaDetails);
         return updatedPersona != null ? ResponseEntity.ok(updatedPersona) : ResponseEntity.notFound().build();
     }
