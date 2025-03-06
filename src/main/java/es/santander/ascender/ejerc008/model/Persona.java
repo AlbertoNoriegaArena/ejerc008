@@ -1,11 +1,13 @@
 package es.santander.ascender.ejerc008.model;
 
+import org.hibernate.validator.constraints.Length;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.Max;
 
 @Entity
 public class Persona {
@@ -14,12 +16,16 @@ public class Persona {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Length(max = 30)
     private String nombre;
 
+    @Length(max = 30)
     private String apellido;
 
+    @Max(150)
     private int edad;
 
+    @Length(max = 15)
     private String estadoCivil;
 
     @ManyToOne()

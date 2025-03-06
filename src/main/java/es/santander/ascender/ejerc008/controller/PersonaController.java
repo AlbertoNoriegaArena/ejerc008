@@ -12,6 +12,7 @@ import es.santander.ascender.ejerc008.model.Persona;
 import es.santander.ascender.ejerc008.model.Provincia;
 import es.santander.ascender.ejerc008.service.PersonaService;
 import es.santander.ascender.ejerc008.service.ProvinciaService;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/personas")
@@ -25,7 +26,7 @@ public class PersonaController {
 
     // Create
     @PostMapping
-    public ResponseEntity<?> createPersona(@RequestBody Persona persona) {
+    public ResponseEntity<?> createPersona(@Valid @RequestBody Persona persona) {
         if (persona.getProvincia() == null || persona.getProvincia().getId() == null) {
             return ResponseEntity.badRequest().body("El ID de la provincia es obligatorio.");
         }
@@ -61,7 +62,7 @@ public class PersonaController {
 
     // Update
     @PutMapping("/{id}")
-    public ResponseEntity<Persona> updatePersona(@PathVariable Long id, @RequestBody Persona personaDetails) {
+    public ResponseEntity<Persona> updatePersona(@Valid @PathVariable Long id, @RequestBody Persona personaDetails) {
         Persona updatedPersona = personaService.updatePersona(id, personaDetails);
         return updatedPersona != null ? ResponseEntity.ok(updatedPersona) : ResponseEntity.notFound().build();
     }
