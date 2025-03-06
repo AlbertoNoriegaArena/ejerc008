@@ -23,23 +23,24 @@ public class PersonaController {
     @Autowired
     private ProvinciaService provinciaService;
 
-    //Create
+    // Create
     @PostMapping
     public ResponseEntity<?> createPersona(@RequestBody Persona persona) {
         if (persona.getProvincia() == null || persona.getProvincia().getId() == null) {
             return ResponseEntity.badRequest().body("El ID de la provincia es obligatorio.");
         }
-    
+
         Optional<Provincia> optionalProvincia = provinciaService.getProvinciaById(persona.getProvincia().getId());
-        
+
         if (optionalProvincia.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                .body("Provincia con ID " + persona.getProvincia().getId() + " no encontrada.");
+                    .body("Id Provincia :" + persona.getProvincia().getId() + " nombre de provincia: "
+                            + persona.getProvincia().getNombre() + " no encontrada.");
         }
-    
+
         persona.setProvincia(optionalProvincia.get());
         Persona createdPersona = personaService.createPersona(persona);
-    
+
         return ResponseEntity.status(HttpStatus.CREATED).body(createdPersona);
     }
 

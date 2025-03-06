@@ -19,7 +19,7 @@ import jakarta.validation.constraints.Min;
 public class Provincia {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Length(max = 30)
