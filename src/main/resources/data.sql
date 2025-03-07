@@ -1,5 +1,6 @@
 -- Inserción de las provincias
 INSERT INTO provincia (nombre, descripcion, poblacion) VALUES
+('A Coruña', 'Provincia en el noroeste de España, en la comunidad autónoma de Galicia', 950000),
 ('Álava', 'Provincia en el norte de España, en la comunidad autónoma del País Vasco', 331000),
 ('Albacete', 'Provincia en el este de España, en la comunidad autónoma de Castilla-La Mancha', 174000),
 ('Alicante', 'Provincia en la comunidad Valenciana, en la costa este de España', 1860000),
@@ -29,9 +30,11 @@ INSERT INTO provincia (nombre, descripcion, poblacion) VALUES
 ('Las Palmas', 'Provincia en las Islas Canarias, en el océano Atlántico', 1100000),
 ('León', 'Provincia en el noroeste de España, en la comunidad autónoma de Castilla y León', 470000),
 ('Lleida', 'Provincia en la comunidad autónoma de Cataluña, en el noreste de España', 430000),
+('Lugo', 'Provincia en la comunidad autónoma de Galicia, en el noroeste de España', 200000),
 ('Madrid', 'Provincia central de España', 6642000),
 ('Málaga', 'Provincia en el sur de España, en la comunidad autónoma de Andalucía', 1700000),
 ('Murcia', 'Provincia en el sureste de España, en la comunidad autónoma de Murcia', 1500000),
+('Melilla', 'Ciudad autónoma de España, ubicada en la costa norte de África', 85000),
 ('Navarra', 'Provincia en el norte de España, en la comunidad autónoma de Navarra', 650000),
 ('Ourense', 'Provincia en el noroeste de España, en la comunidad autónoma de Galicia', 300000),
 ('Palencia', 'Provincia en el norte de España, en la comunidad autónoma de Castilla y León', 160000),
