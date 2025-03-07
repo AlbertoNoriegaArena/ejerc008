@@ -8,13 +8,18 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import es.santander.ascender.ejerc008.model.Persona;
+import es.santander.ascender.ejerc008.model.Provincia;
 import es.santander.ascender.ejerc008.repository.PersonaRepository;
+import es.santander.ascender.ejerc008.repository.ProvinciaRepository;
 
 @Service
 @Transactional
 public class PersonaService {
     @Autowired
     private PersonaRepository personaRepository;
+
+    @Autowired
+    private ProvinciaRepository provinciaRepository;
 
     // Create
     public Persona createPersona(Persona persona) {
@@ -42,9 +47,17 @@ public class PersonaService {
             persona.setApellido(personaDetails.getApellido());
             persona.setEdad(personaDetails.getEdad());
             persona.setEstadoCivil(personaDetails.getEstadoCivil());
-            persona.setProvincia(personaDetails.getProvincia());
+
+            // Le pasas los datos de la provincia basado en el ID
+            Provincia provincia = null;
+            if (personaDetails.getProvincia() != null && personaDetails.getProvincia().getId() != null) {
+                provincia = provinciaRepository.findById(personaDetails.getProvincia().getId()).orElse(null);
+                persona.setProvincia(provincia);
+            }
+            persona.setProvincia(provincia);
 
             return personaRepository.save(persona);
+
         }
         return null;
     }
