@@ -23,6 +23,7 @@ public class PersonaService {
 
     // Create
     public Persona createPersona(Persona persona) {
+        estableceProvincia(persona);
         return personaRepository.save(persona);
     }
 
@@ -49,12 +50,7 @@ public class PersonaService {
             persona.setEstadoCivil(personaDetails.getEstadoCivil());
 
             // Le pasas los datos de la provincia basado en el ID
-            Provincia provincia = null;
-            if (personaDetails.getProvincia() != null && personaDetails.getProvincia().getId() != null) {
-                provincia = provinciaRepository.findById(personaDetails.getProvincia().getId()).orElse(null);
-                persona.setProvincia(provincia);
-            }
-            persona.setProvincia(provincia);
+            estableceProvincia(personaDetails, persona);
 
             return personaRepository.save(persona);
 
@@ -70,5 +66,18 @@ public class PersonaService {
             return true;
         }
         return false;
+    }
+
+    private void estableceProvincia(Persona personaDetails) {
+        estableceProvincia(personaDetails, personaDetails);
+    }
+
+    private void estableceProvincia(Persona personaDetails, Persona persona) {
+        Provincia provincia = null;
+        if (personaDetails.getProvincia() != null && personaDetails.getProvincia().getId() != null) {
+            provincia = provinciaRepository.findById(personaDetails.getProvincia().getId()).orElse(null);
+        }
+        persona.setProvincia(provincia);
+
     }
 }
